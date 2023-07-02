@@ -37,7 +37,8 @@
 {{- end }}
 
 {{- /* Styles */}}
-
+{{ $styles := resources.Get "style.css" }}
+<link rel="stylesheet" href="{{ $styles.RelPermalink }}">    
 {{- /* includes */}}
 {{- $includes := slice }}
 {{- $includes = $includes | append (" " | resources.FromString "assets/css/includes-blank.css")}}
